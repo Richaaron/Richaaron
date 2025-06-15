@@ -314,7 +314,8 @@ export const NetflixClone = () => {
   // Fetch movies from TMDB
   const fetchMovies = async (endpoint) => {
     try {
-      const response = await axios.get(`${TMDB_BASE_URL}${endpoint}?api_key=${TMDB_API_KEY}`);
+      const separator = endpoint.includes('?') ? '&' : '?';
+      const response = await axios.get(`${TMDB_BASE_URL}${endpoint}${separator}api_key=${TMDB_API_KEY}`);
       return response.data.results;
     } catch (error) {
       console.error('Error fetching movies:', error);
