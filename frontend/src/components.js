@@ -311,6 +311,55 @@ export const NetflixClone = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
+  // Mock data as fallback
+  const mockMovies = [
+    {
+      id: 1,
+      title: "The Amateur",
+      overview: "After his life is turned upside down when his wife is killed in a London terrorist attack, a brilliant but introverted CIA decoder takes matters into his own hands when his supervisors refuse to take action.",
+      backdrop_path: "/6van4BavoNXaZhCPdzLHNQ4Uc8H.jpg",
+      poster_path: "/SNEoUInCa5fAgwuEBMIMBGvkkh.jpg",
+      vote_average: 6.9,
+      release_date: "2025-04-09"
+    },
+    {
+      id: 2,
+      title: "Deep Cover",
+      overview: "Kat is an improv comedy teacher beginning to question if she's missed her shot at success. When an undercover cop offers her the role of a lifetime, she recruits two of her students to infiltrate London's gangland by impersonating dangerous criminals.",
+      backdrop_path: "/sNpoGjbV2a65HfZXCtTvf313cBT.jpg",
+      poster_path: "/euM8fJvfH28xhjGy25LiygxfkWc.jpg",
+      vote_average: 6.9,
+      release_date: "2025-06-04"
+    },
+    {
+      id: 3,
+      title: "Final Destination Bloodlines",
+      overview: "Plagued by a violent recurring nightmare, college student Stefanie heads home to track down the one person who might be able to break the cycle and save her family from the grisly demise that inevitably awaits them all.",
+      backdrop_path: "/uIpJPDNFoeX0TVml9smPrs9KUVx.jpg",
+      poster_path: "/6WxhEvFsauuACfv8HyoVX6mZKFj.jpg",
+      vote_average: 7.0,
+      release_date: "2025-05-14"
+    },
+    {
+      id: 4,
+      title: "How to Train Your Dragon",
+      overview: "On the rugged isle of Berk, where Vikings and dragons have been bitter enemies for generations, Hiccup stands apart, defying centuries of tradition when he befriends Toothless, a feared Night Fury dragon.",
+      backdrop_path: "/7HqLLVjdjhXS0Qoz1SgZofhkIpE.jpg",
+      poster_path: "/q5pXRYTycaeW6dEgsCrd4mYPmxM.jpg",
+      vote_average: 8.0,
+      release_date: "2025-06-06"
+    },
+    {
+      id: 5,
+      title: "The Accountant²",
+      overview: "When an old acquaintance is murdered, Wolff is compelled to solve the case. Realizing more extreme measures are necessary, Wolff recruits his estranged and highly lethal brother, Brax, to help.",
+      backdrop_path: "/yBDvgpyynDsbMyK21FoQu1c2wYR.jpg",
+      poster_path: "/kMDUS7VmFhb2coRfVBoGLR8ADBt.jpg",
+      vote_average: 7.2,
+      release_date: "2025-04-23"
+    }
+  ];
+
   // Fetch movies from TMDB
   const fetchMovies = async (endpoint) => {
     try {
@@ -319,7 +368,8 @@ export const NetflixClone = () => {
       return response.data.results;
     } catch (error) {
       console.error('Error fetching movies:', error);
-      return [];
+      // Return mock data as fallback
+      return mockMovies;
     }
   };
 
@@ -331,7 +381,8 @@ export const NetflixClone = () => {
       return trailer ? trailer.key : null;
     } catch (error) {
       console.error('Error fetching trailer:', error);
-      return null;
+      // Return a sample trailer key for demo
+      return 'dQw4w9WgXcQ'; // Sample YouTube video ID
     }
   };
 
@@ -342,6 +393,11 @@ export const NetflixClone = () => {
       setSearchResults(response.data.results);
     } catch (error) {
       console.error('Error searching movies:', error);
+      // Filter mock data for search
+      const filtered = mockMovies.filter(movie => 
+        movie.title.toLowerCase().includes(query.toLowerCase())
+      );
+      setSearchResults(filtered);
     }
   };
 
@@ -378,6 +434,13 @@ export const NetflixClone = () => {
         }
       } catch (error) {
         console.error('Error initializing data:', error);
+        // Use mock data as fallback
+        setTrendingMovies(mockMovies);
+        setPopularMovies(mockMovies);
+        setTopRatedMovies(mockMovies);
+        setActionMovies(mockMovies);
+        setComedyMovies(mockMovies);
+        setHeroMovie(mockMovies[0]);
       } finally {
         setIsLoading(false);
       }
