@@ -413,6 +413,19 @@ export const NetflixClone = () => {
   useEffect(() => {
     const initializeData = async () => {
       setIsLoading(true);
+      
+      // Set a shorter timeout for API calls
+      const timeout = setTimeout(() => {
+        console.log('API timeout, using mock data');
+        setTrendingMovies(mockMovies);
+        setPopularMovies(mockMovies);
+        setTopRatedMovies(mockMovies);
+        setActionMovies(mockMovies);
+        setComedyMovies(mockMovies);
+        setHeroMovie(mockMovies[0]);
+        setIsLoading(false);
+      }, 3000); // 3 second timeout
+
       try {
         const [trending, popular, topRated, action, comedy] = await Promise.all([
           fetchMovies('/trending/movie/week'),
@@ -422,17 +435,24 @@ export const NetflixClone = () => {
           fetchMovies('/discover/movie?with_genres=35'), // Comedy
         ]);
 
-        setTrendingMovies(trending);
-        setPopularMovies(popular);
-        setTopRatedMovies(topRated);
-        setActionMovies(action);
-        setComedyMovies(comedy);
+        clearTimeout(timeout);
+        
+        setTrendingMovies(trending.length > 0 ? trending : mockMovies);
+        setPopularMovies(popular.length > 0 ? popular : mockMovies);
+        setTopRatedMovies(topRated.length > 0 ? topRated : mockMovies);
+        setActionMovies(action.length > 0 ? action : mockMovies);
+        setComedyMovies(comedy.length > 0 ? comedy : mockMovies);
         
         // Set hero movie to first trending movie
         if (trending && trending.length > 0) {
           setHeroMovie(trending[0]);
+        } else {
+          setHeroMovie(mockMovies[0]);
         }
+        
+        setIsLoading(false);
       } catch (error) {
+        clearTimeout(timeout);
         console.error('Error initializing data:', error);
         // Use mock data as fallback
         setTrendingMovies(mockMovies);
@@ -441,7 +461,6 @@ export const NetflixClone = () => {
         setActionMovies(mockMovies);
         setComedyMovies(mockMovies);
         setHeroMovie(mockMovies[0]);
-      } finally {
         setIsLoading(false);
       }
     };
