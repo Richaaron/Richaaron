@@ -361,8 +361,8 @@ export const NetflixClone = () => {
           fetchMovies('/trending/movie/week'),
           fetchMovies('/movie/popular'),
           fetchMovies('/movie/top_rated'),
-          fetchMovies('/discover/movie?with_genres=28'), // Action
-          fetchMovies('/discover/movie?with_genres=35'), // Comedy
+          fetchMovies('/discover/movie&with_genres=28'), // Action
+          fetchMovies('/discover/movie&with_genres=35'), // Comedy
         ]);
 
         setTrendingMovies(trending);
