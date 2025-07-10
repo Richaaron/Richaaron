@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI & Machine Learning Course</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar">
+            <div class="container">
+                <h1 class="logo"><a href="#">AI/ML Course</a></h1>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#syllabus">Syllabus</a></li>
+                    <li><a href="#interactive-preview">Preview</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#enroll" class="btn btn-primary">Enroll Now</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h2>Unlock the Power of Artificial Intelligence</h2>
+                <p class="lead">Join our comprehensive course and master the concepts of AI and Machine Learning.</p>
+                <div id="countdown-timer">
+                    <p>Enrollment Closes In:</p>
+                    <div id="timer">
+                        <span>00D</span> : <span>00H</span> : <span>00M</span> : <span>00S</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="syllabus" class="syllabus-section">
+            <div class="container">
+                <h2>Course Syllabus</h2>
+                <div class="syllabus-content">
+                    <h4>Module 1: Introduction to AI & Machine Learning</h4>
+                    <ul>
+                        <li>History and Evolution of AI</li>
+                        <li>Types of Machine Learning: Supervised, Unsupervised, Reinforcement</li>
+                        <li>Key Concepts: Data, Features, Models, Algorithms</li>
+                        <li>Tools and Technologies: Python, Jupyter, Scikit-learn</li>
+                    </ul>
+
+                    <h4>Module 2: Python for Data Science & ML</h4>
+                    <ul>
+                        <li>Python Basics Refresher (Optional)</li>
+                        <li>NumPy for Numerical Computation</li>
+                        <li>Pandas for Data Manipulation and Analysis</li>
+                        <li>Matplotlib and Seaborn for Data Visualization</li>
+                    </ul>
+
+                    <h4>Module 3: Supervised Learning - Regression & Classification</h4>
+                    <ul>
+                        <li>Linear Regression, Polynomial Regression</li>
+                        <li>Logistic Regression</li>
+                        <li>K-Nearest Neighbors (KNN)</li>
+                        <li>Support Vector Machines (SVM)</li>
+                        <li>Decision Trees and Random Forests</li>
+                        <li>Model Evaluation Metrics (Accuracy, Precision, Recall, F1-score, MSE, R-squared)</li>
+                        <li>Cross-Validation and Hyperparameter Tuning</li>
+                    </ul>
+
+                    <h4>Module 4: Unsupervised Learning</h4>
+                    <ul>
+                        <li>Clustering: K-Means, Hierarchical Clustering</li>
+                        <li>Dimensionality Reduction: PCA (Principal Component Analysis)</li>
+                        <li>Association Rule Mining (Apriori)</li>
+                    </ul>
+
+                    <h4>Module 5: Introduction to Deep Learning & Neural Networks</h4>
+                    <ul>
+                        <li>Biological Neuron vs. Artificial Neuron</li>
+                        <li>Perceptrons and Multi-Layer Perceptrons (MLP)</li>
+                        <li>Activation Functions (Sigmoid, ReLU, Tanh)</li>
+                        <li>Backpropagation Algorithm</li>
+                        <li>Introduction to TensorFlow and Keras</li>
+                    </ul>
+
+                    <h4>Module 6: Advanced Topics & Applications (Overview)</h4>
+                    <ul>
+                        <li>Natural Language Processing (NLP) Basics</li>
+                        <li>Computer Vision (CV) Basics</li>
+                        <li>Reinforcement Learning Concepts</li>
+                        <li>Ethical Considerations in AI</li>
+                    </ul>
+
+                    <h4>Module 7: Capstone Project</h4>
+                    <ul>
+                        <li>Real-world problem statement</li>
+                        <li>Data Collection and Preprocessing</li>
+                        <li>Model Selection and Training</li>
+                        <li>Performance Evaluation and Reporting</li>
+                        <li>Project Presentation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="interactive-preview" class="preview-section">
+            <div class="container">
+                <h2>Interactive Preview</h2>
+                <div class="preview-content">
+                    <p>Experience a glimpse of our learning environment. Click below to see a simple data visualization example.</p>
+                    <button id="preview-button" class="btn btn-success">Toggle Simple Chart</button>
+                    <div id="preview-data" style="display:none; margin-top:20px; padding:20px; border:1px solid #ccc; background:#fff; text-align:left;">
+                        <h4>Simple Data Visualization (Mock)</h4>
+                        <p>Imagine a bar chart here showing student progress or topic difficulty. For now, here's some text:</p>
+                        <ul>
+                            <li>Topic A: 80%掌握</li>
+                            <li>Topic B: 65%掌握</li>
+                            <li>Topic C: 90%掌握</li>
+                        </ul>
+                        <p><em>In a real preview, this could be an interactive chart using a library like Chart.js or D3.js.</em></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq-section">
+            <div class="container">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">What are the prerequisites for this course?</button>
+                        <div class="faq-answer">
+                            <p>A basic understanding of programming concepts (Python is highly recommended) and high-school level mathematics (algebra, basic calculus concepts) will be beneficial. The course is designed to be accessible, but some prior coding experience will help you grasp concepts faster.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Is this course suitable for absolute beginners in programming?</button>
+                        <div class="faq-answer">
+                            <p>While we cover Python essentials for Data Science, if you have zero programming experience, we recommend taking a foundational Python course first. However, motivated learners can still succeed by dedicating extra time to the programming aspects.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">What kind of support will I get during the course?</button>
+                        <div class="faq-answer">
+                            <p>Students will have access to a dedicated online forum for questions, weekly Q&A sessions with instructors (via video conference), and peer support channels. Our chatbot can also answer common questions 24/7.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Will I receive a certificate upon completion?</button>
+                        <div class="faq-answer">
+                            <p>Yes, upon successful completion of all modules, assignments, and the capstone project, you will receive a verifiable certificate of completion.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">How long will I have access to the course materials?</button>
+                        <div class="faq-answer">
+                            <p>You will have lifetime access to all course materials, including video lectures, notes, and code samples, even after completing the course.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <button class="faq-question">What is the expected weekly time commitment?</button>
+                        <div class="faq-answer">
+                            <p>We recommend dedicating approximately 8-12 hours per week to the course. This includes watching lectures, completing assignments, and working on the project.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">Are there any software requirements?</button>
+                        <div class="faq-answer">
+                            <p>You'll need a computer with internet access. We will guide you on installing Python, Anaconda/Miniconda, and relevant libraries like NumPy, Pandas, Scikit-learn, and TensorFlow/Keras. Most of these tools are free and open-source.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chatbot-section" class="chatbot-section">
+            <div class="container">
+                <h2>Have Questions? Ask our Chatbot!</h2>
+                <div id="chatbot-container">
+                    <div id="chat-window">
+                        <div id="chat-messages">
+                            <!-- Chat messages will appear here -->
+                            <div class="message bot-message"><p>Hello! How can I help you today?</p></div>
+                        </div>
+                    </div>
+                    <div id="chat-input-area">
+                        <input type="text" id="user-input" placeholder="Type your message...">
+                        <button id="send-button">Send</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="enroll" class="enroll-section">
+            <div class="container">
+                <h2>Enroll Today!</h2>
+                <p>Don't miss this opportunity to become an AI expert.</p>
+                <a href="#" class="btn btn-primary btn-large">Sign Up Now</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-section">
+        <div class="container">
+            <p>&copy; 2024 AI & Machine Learning Course. All Rights Reserved.</p>
+            <p>
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

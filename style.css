@@ -1,0 +1,510 @@
+/* Global Styles */
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.7;
+    color: var(--dark-color);
+    background-color: #f9f9f9; /* Slightly off-white for a softer look */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden; /* Contains floats */
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}
+
+.btn-large {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+}
+
+
+/* Header & Navigation */
+#navbar {
+    background: var(--dark-color);
+    color: #fff;
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#navbar .logo a {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+#navbar .logo a:hover {
+    text-decoration: none;
+}
+
+#navbar ul {
+    display: flex;
+    align-items: center;
+}
+
+#navbar ul li a {
+    color: #fff;
+    padding: 0.75rem 1rem;
+    margin: 0 0.25rem;
+    font-weight: 500;
+}
+
+#navbar ul li a:hover {
+    background: var(--primary-color);
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#navbar ul li a.btn-primary:hover {
+    background-color: #0056b3; /* Darken primary color on hover */
+}
+
+
+/* Section Base Styles */
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid #eee; /* Subtle separator */
+}
+
+section:nth-child(even) {
+    background-color: var(--light-color); /* Alternating background */
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(rgba(0, 123, 255, 0.7), rgba(0, 86, 179, 0.8)), url('assets/hero-bg.jpg') no-repeat center center/cover; /* Placeholder for a background image */
+    color: #fff;
+    text-align: center;
+    padding: 80px 0; /* Adjusted padding */
+    min-height: 60vh; /* Adjusted min-height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* For pseudo-element overlay if needed */
+}
+.hero-section::before { /* Optional: Darker overlay for better text readability if background image is too light */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15); /* Slightly darker overlay */
+    z-index: 1; /* Ensure it's behind the content */
+}
+
+.hero-section .container {
+    position: relative; /* Ensure content is above overlay */
+    z-index: 2;
+}
+
+
+.hero-section h2 {
+    font-size: 3rem; /* Slightly larger */
+    margin-bottom: 1rem;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3); /* Text shadow for readability */
+}
+
+.hero-section .lead {
+    font-size: 1.4rem; /* Slightly larger */
+    margin-bottom: 2.5rem; /* Increased margin */
+    max-width: 700px; /* Constrain width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#countdown-timer {
+    margin-top: 25px; /* Increased margin */
+}
+
+#countdown-timer p {
+    font-size: 1.2rem; /* Slightly larger */
+    margin-bottom: 0.75rem; /* Increased margin */
+}
+
+#timer {
+    font-size: 2.2rem; /* Slightly larger */
+    font-weight: bold;
+    background: rgba(0,0,0,0.3); /* Darker background for timer */
+    padding: 15px 25px; /* Increased padding */
+    border-radius: 8px; /* Slightly more rounded */
+    display: inline-block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#timer span {
+    margin: 0 8px; /* Increased spacing */
+}
+
+/* Syllabus Section */
+.syllabus-section .syllabus-content h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+.syllabus-section .syllabus-content ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 1rem;
+}
+.syllabus-section .syllabus-content ul li {
+    padding: 3px 0;
+}
+
+
+/* Interactive Preview Section */
+.preview-section .preview-content {
+    text-align: center;
+}
+#preview-button {
+    background-color: var(--success-color);
+    color: white;
+}
+#preview-button:hover {
+    background-color: #1e7e34;
+}
+
+
+/* FAQ Section */
+.faq-section .faq-accordion .faq-item {
+    background: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.faq-section .faq-question {
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--dark-color);
+}
+
+.faq-section .faq-question::after {
+    content: '+'; /* Plus sign for collapsed */
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.faq-section .faq-item.active .faq-question::after {
+    content: '−'; /* Minus sign for expanded */
+}
+
+.faq-section .faq-answer {
+    padding: 0 20px 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+.faq-section .faq-answer p {
+    margin-bottom: 0; /* Remove default p margin inside answer */
+}
+
+.faq-section .faq-item.active .faq-answer {
+    max-height: 300px; /* Adjust as needed */
+    padding: 0 20px 15px;
+}
+
+/* Chatbot Section */
+.chatbot-section {
+    background-color: var(--light-color);
+}
+
+#chatbot-container {
+    max-width: 500px;
+    margin: 20px auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden; /* To contain chat window border radius */
+}
+
+#chat-window {
+    height: 300px;
+    overflow-y: auto;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+#chat-messages .message {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+#chat-messages .message p {
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 70%;
+    line-height: 1.4;
+    margin-bottom: 0; /* Override default p margin */
+}
+
+#chat-messages .user-message p {
+    background: var(--primary-color);
+    color: white;
+    border-bottom-right-radius: 5px;
+    margin-left: auto; /* Align to right */
+}
+
+#chat-messages .bot-message p {
+    background: #e9ecef;
+    color: var(--dark-color);
+    border-bottom-left-radius: 5px;
+    margin-right: auto; /* Align to left */
+}
+
+#chat-input-area {
+    display: flex;
+    padding: 10px;
+    background: #f1f1f1;
+}
+
+#user-input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-right: 10px;
+    outline: none;
+}
+
+#send-button {
+    background: var(--success-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+#send-button:hover {
+    background: #1e7e34;
+}
+
+/* Enroll Section */
+.enroll-section {
+    background-color: var(--primary-color);
+    color: #fff;
+    text-align: center;
+}
+.enroll-section h2 {
+    color: #fff; /* Override default h2 color */
+}
+.enroll-section .btn-primary {
+    background-color: #fff;
+    color: var(--primary-color);
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.enroll-section .btn-primary:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px); /* Slight lift on hover */
+}
+
+
+/* Footer Section */
+.footer-section {
+    background: var(--dark-color);
+    color: #ccc;
+    text-align: center;
+    padding: 30px 0;
+    border-bottom: none; /* Remove border for the last section */
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #fff;
+}
+
+.footer-section a:hover {
+    color: var(--primary-color);
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #navbar .container {
+        flex-direction: column;
+    }
+
+    #navbar .logo {
+        margin-bottom: 0.5rem;
+    }
+
+    #navbar ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    #navbar ul li {
+        width: 100%;
+        margin-bottom: 0.25rem;
+    }
+
+    #navbar ul li a {
+        display: block;
+    }
+
+    .hero-section h2 {
+        font-size: 2.2rem;
+    }
+    .hero-section .lead {
+        font-size: 1.1rem;
+    }
+    #timer {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    #chat-messages .message p {
+        max-width: 85%;
+    }
+}
+
+@media (max-width: 500px) {
+    .container {
+        width: 95%;
+    }
+    .hero-section h2 {
+        font-size: 1.8rem;
+    }
+    .hero-section .lead {
+        font-size: 1rem;
+    }
+    #timer {
+        font-size: 1.2rem;
+        padding: 8px 15px;
+    }
+    #timer span {
+        margin: 0 3px;
+    }
+
+    .btn, #send-button {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+    .btn-large {
+        font-size: 1rem;
+        padding: 12px 25px;
+    }
+
+    #user-input {
+        padding: 8px;
+    }
+
+    .syllabus-section .syllabus-content h4 {
+        font-size: 1.1rem;
+    }
+    .syllabus-section .syllabus-content ul {
+        margin-left: 15px; /* Adjust list indent */
+    }
+
+    .faq-section .faq-question {
+        font-size: 1rem;
+        padding: 12px 15px;
+    }
+    .faq-section .faq-question::after {
+        font-size: 1.3rem;
+    }
+}
